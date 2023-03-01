@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizikaOnline - Információk</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="contentstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+</head>
+<body>
+    <header>
+        <div class="logo">Fizika<span>Online</span></div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="index.html">Főoldal</a></li>
+                <li><a href="informations.html" class="active">Információk</a></li>
+                <li><a href="connections.html">Kapcsolat</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-content">
+        <div class="description content-block">
+            <h2>Általános leírás</h2>
+            <p>A FizikaOnline.hu egy olyan projekt, amely segít az általános iskolások számára érthetőbbé, szemléletesebbé, interaktívabbá tenni a tantárgy tanulását és megértését szemléletes szimulációk segítségével.</p>
+            <p>A webes alkalmazás eddig 12 téma feldolgozásában tud segítséget nyújtani szimulációkkal. Ezen témák a következők:</p>
+            <ul>
+                <li>Arkhimédész törvénye</li>
+                <li>Egyenes vonalú egyenletes mozgás - egyszakaszos</li>
+                <li>Egyenes vonalú egyenletes mozgás - átlagsebesség</li>
+                <li>Egyenes vonalú egyenletesen változó mozgás</li>
+                <li>Fénytörés</li>
+                <li>Hidrosztatikai nyomás</li>
+                <li>Körmozgás</li>
+                <li>Lendület</li>
+                <li>Mérleg</li>
+                <li>Sűrűség</li>
+                <li>Súrlódás</li>
+                <li>Szabadesés</li>
+            </ul>
+        </div>
+        <div class="references content-block">
+            <h2>Felhasznált tananyag</h2>
+            <div class="flex">
+                <div class="text">
+                    <p>A projekt a következő tankönyv anyagára támaszkodik, hivatkozik:</p>
+                    <a href="https://www.tankonyvkatalogus.hu/site/kiadvany/OH-FIZ78TA">Oktatási Hivatal: Fizika 7-8 (NAT2020)</a>
+                </div>
+                <img src="images/OH-FIZ78TA.jpg">
+            </div>
+        </div>
+        <div class="technical content-block">
+            <h2>Technikai Információk</h2>
+            <p>A projekt a következő technológiákat használja:</p>
+            <ul class="technologies">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Unity</li>
+            </ul>
+            <p>A projekt projektben fel lettek haszánlva különböző grafikus elemek, melyek a következő weboldalakon találhatóak meg:</p>
+            <ul>
+                <li><a href="https://assetstore.unity.com/">Unity Asset Store</a></li>
+                <li><a href="https://www.freepik.com/">Freepik</a></li>
+                <li><a href="https://www.vecteezy.com/">Vecteezy</a></li>
+            </ul>
+        </div>
+        <div class="author content-block">
+            <h2>A szerzőről</h2>
+            <div class="flex">
+                <div class="text">
+                    <p>A projektet készítette: Kovács Boldizsár József</p>
+                    <a href="https://www.inf.unideb.hu/">Debreceni Egyetem Informatikai Kar</a>
+                    <p>A projekt az Informatikai Kar Programtervező Informatikus képzésének szakdolgozatára készült.</p>
+                </div>
+                <img src="images/de_logo.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fa-solid fa-chevron-up" id="up-arrow"></i>
+        <div class="content">
+            <h2>A projektet készítette: Kovács Boldizsár József</h2>
+            <p>Debreceni Egyetem Informatikai Kar</p>
+            <div class="social-icons">
+                <i class="fa-solid fa-share" id="share" onclick="share()"></i>
+                <a href="mailto:kovacsboldizsarjozsef@outlook.hu"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script type="text/javascript">
+        
+        window.onscroll = function() {stickyMenu()};
+
+        var header = document.querySelector('header');
+        var sticky = header.offsetTop;
+        var footer = document.querySelector('footer');
+        
+        function toggleMenu() {
+            const navbarElements = document.querySelector('.nav-bar');
+            navbarElements.classList.toggle('active');
+        }
+
+        function stickyMenu() {
+            if (window.pageYOffset >= sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+
+            scrolledDown();
+        }
+
+        function share() {
+            var url = window.location.href;
+            navigator.clipboard.writeText(url);
+            alert("A link sikeresen másolva lett a vágólapra!");
+        }
+
+        function scrolledDown() {
+            var scrollHeight = document.documentElement.scrollHeight;
+            var clientHeight = document.documentElement.clientHeight;
+            var scrollTop = document.documentElement.scrollTop;
+
+            if (scrollTop + clientHeight>= scrollHeight) {
+                footer.classList.add("scrolled-down");
+            } else {
+                footer.classList.remove("scrolled-down");
+            }
+        }
+
+    </script>
+
+</body>
+</html>

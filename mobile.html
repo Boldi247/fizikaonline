@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizikaOnline - Fizikai szimulációk általános iskolások számára</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+</head>
+<body>
+    <header>
+        <div class="logo">Fizika<span>Online</span></div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="index.html" class="active">Főoldal</a></li>
+                <li><a href="informations.html">Információk</a></li>
+                <li><a href="connections.html">Kapcsolat</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="welcome">
+        <h1>Fizika<span>Online</span></h1>
+        <p>Fizikai szimulációk általános iskolások számára</p>
+        <p style="text-align: center; font-size: large; color: black;">
+            A szimulációk nem jeleníthetőek meg mobil eszközön!<br>
+            Térj vissza egy számítógépről!</p>
+    </div>
+
+    <footer>
+        <i class="fa-solid fa-chevron-up" id="up-arrow"></i>
+        <div class="content">
+            <h2>A projektet készítette: Kovács Boldizsár József</h2>
+            <p>Debreceni Egyetem Informatikai Kar</p>
+            <div class="social-icons">
+                <i class="fa-solid fa-share" id="share" onclick="share()"></i>
+                <a href="mailto:kovacsboldizsarjozsef@outlook.hu"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script type="text/javascript">
+        window.onscroll = function() {stickyMenu()};
+
+        var header = document.querySelector('header');
+        var sticky = header.offsetTop;
+        var footer = document.querySelector('footer');
+        
+        function toggleMenu() {
+            const navbarElements = document.querySelector('.nav-bar');
+            navbarElements.classList.toggle('active');
+        }
+
+        function stickyMenu() {
+            if (window.pageYOffset >= sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+
+            scrolledDown();
+        }
+
+        function share() {
+            var url = window.location.href;
+            navigator.clipboard.writeText(url);
+            alert("A link sikeresen másolva lett a vágólapra!");
+        }
+
+        function scrolledDown() {
+            var scrollHeight = document.documentElement.scrollHeight;
+            var clientHeight = document.documentElement.clientHeight;
+            var scrollTop = document.documentElement.scrollTop;
+
+            if (scrollTop + clientHeight>= scrollHeight) {
+                footer.classList.add("scrolled-down");
+            } else {
+                footer.classList.remove("scrolled-down");
+            }
+        }
+
+    </script>
+
+</body>
+</html>
