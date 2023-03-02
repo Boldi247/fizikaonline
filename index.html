@@ -28,11 +28,7 @@
     <div class="welcome">
         <h1>Fizika<span>Online</span></h1>
         <p>Fizikai szimulációk általános iskolások számára</p>
-        <a href="#game-window">Szimulációk</a>
-    </div>
-
-    <div class="game">
-        <iframe src="beta 2/index.html" frameborder="" width="850" height="535" id="game-window"></iframe>
+        <a href="simulations/index.html">Szimulációk</a>
     </div>
 
     <footer>
@@ -46,8 +42,6 @@
             </div>
         </div>
     </footer>
-
-
 
     <script type="text/javascript">
         /* Storing user's device details in a variable*/
@@ -64,8 +58,6 @@
             
         if (isMobileDevice) {
             window.location.href = "mobile.html";
-        } else {
-            console.log("You are using Desktop");
         }
 
         window.onscroll = function() {stickyMenu()};

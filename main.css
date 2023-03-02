@@ -228,20 +228,6 @@ footer i:hover {
     padding-top: 80px;
 }
 
-.game {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    filter: backdrop-filter(blur(10px));
-    -webkit-backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.188);
-}
-
-.game iframe {
-}
-
 @media only screen and (max-width: 900px) {
     .hamburger {
         display: block;
