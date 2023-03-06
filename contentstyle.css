@@ -80,6 +80,12 @@
     align-items: center;
 }
 
+.content-block p.important {
+    color: #1b9aaa;
+    font-weight: bold;
+    font-size: 20px;
+}
+
 .flex .text {
     max-width: 400px;
 }
